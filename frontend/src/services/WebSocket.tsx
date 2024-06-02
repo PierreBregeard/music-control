@@ -7,9 +7,8 @@ function WebSocket() {
         `ws://${window.location.hostname}:8000`,
     {
         shouldReconnect: (closeEvent) => true,
-        reconnectAttempts: 10,
-        reconnectInterval: (attemptNumber) =>
-          Math.min(Math.pow(2, attemptNumber) * 1000, 10000),
+        reconnectAttempts: 100,
+        reconnectInterval: (attemptNumber) => 2 * 1000
       }
     );
 

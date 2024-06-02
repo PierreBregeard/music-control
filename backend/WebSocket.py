@@ -6,18 +6,18 @@ class WebSocket:
 
     def start(addr):
 
+        Pc = PC()
         def parse_message(message):
             protocol = message[:2]
             match protocol:
                 case "01":
-                    print(message[2:])
-                    PC.set_volume(message[2:])
+                    Pc.set_volume(int(message[2:]))
                 case "02":
-                    PC.previous_track()
+                    Pc.previous_track()
                 case "03":
-                    PC.next_track()
+                    Pc.next_track()
                 case "04":
-                    PC.pp_media()
+                    Pc.pp_media()
 
 
         async def recv(messsages):

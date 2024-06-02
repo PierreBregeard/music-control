@@ -11,6 +11,7 @@ def get_ipv4_address():
     return ipv4_address
 
 addr = get_ipv4_address()
+
 Thread(target=WebSocket.start, args=(addr, ), daemon=True).start()
 flask = Thread(target=Flask.start, args=(addr, ), daemon=True)
 flask.start()

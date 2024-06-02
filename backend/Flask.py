@@ -1,7 +1,6 @@
 import flask
 from flask_cors import CORS
 from pathlib import Path
-from PC import PC
 from os import chdir
 
 class Flask:
